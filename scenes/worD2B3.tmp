@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://53yh466f45gl"]
+
+[ext_resource type="PackedScene" uid="uid://6xf46usgtirp" path="res://scenes/title_screen.tscn" id="1_3mt1e"]
+[ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="1_jt6cq"]
+[ext_resource type="Script" path="res://scripts/transition_screen.gd" id="2_51236"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seiph"]
+size = Vector2(426, 20)
+
+[sub_resource type="Animation" id="Animation_bkm1d"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fadeToNormal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mj67u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ps68r"]
+resource_name = "fade_to_transparent"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"setVisible"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cx055"]
+_data = {
+"RESET": SubResource("Animation_mj67u"),
+"fade_to_black": SubResource("Animation_bkm1d"),
+"fade_to_transparent": SubResource("Animation_ps68r")
+}
+
+[node name="World" type="Node2D"]
+
+[node name="TitleScreen" parent="." instance=ExtResource("1_3mt1e")]
+
+[node name="Player" parent="." instance=ExtResource("1_jt6cq")]
+position = Vector2(544, 281)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(548, 438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_seiph")
+one_way_collision = true
+one_way_collision_margin = 10.0
+
+[node name="TransitionScreen" type="CanvasLayer" parent="."]
+script = ExtResource("2_51236")
+
+[node name="ColorRect" type="ColorRect" parent="TransitionScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionScreen"]
+libraries = {
+"": SubResource("AnimationLibrary_cx055")
+}

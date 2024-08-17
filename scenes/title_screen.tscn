@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://6xf46usgtirp"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_be6yt"]
+
+[sub_resource type="Theme" id="Theme_68fwr"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_be6yt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 83.0
+offset_right = 222.0
+offset_bottom = 106.0
+text = "Sizable"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 203.0
+offset_right = 769.0
+offset_bottom = 323.0
+theme = SubResource("Theme_68fwr")
+text = "Start"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 356.0
+offset_right = 774.0
+offset_bottom = 476.0
+text = "Level select
+"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 525.0
+offset_right = 764.0
+offset_bottom = 645.0
+text = "Options
+"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
