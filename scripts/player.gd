@@ -1,6 +1,4 @@
-class_name Player
-extends Resizable
-
+class_name Player extends CharacterBody2D
 
 const SPEED = 150
 

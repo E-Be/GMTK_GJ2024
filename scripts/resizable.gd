@@ -1,24 +1,34 @@
 class_name Resizable
-extends CharacterBody2D
+extends PhysicsBody2D
 
 @export var state: Constants.State = Constants.State.NORMAL
+@export var hitbox: Hitbox 
 
 func _ready():
+	if hitbox:
+		hitbox.hit.connect(tryStateChange)
 	resize()
 
 func tryStateChange(change: Constants.StateChange):
+	print("Try stage change")
+	print(change)
+	
 	match(change):
 		Constants.StateChange.MINUS when state == Constants.State.SMALL: 
-			pass
+			print("Tried to resize min object")
 			#TODO animation 
 		Constants.StateChange.PLUS when state == Constants.State.BIG: 
-			pass
+			print("Tried to resize max object")
 			#TODO animation 
 		_: 
 			changeState(change)
 			
 func changeState(change: Constants.StateChange):
-	state += change
+	if (change == Constants.StateChange.MINUS):
+		state -= 1
+	elif (change == Constants.StateChange.PLUS):
+		state += 1
+		
 	resize()
 	
 func resize():

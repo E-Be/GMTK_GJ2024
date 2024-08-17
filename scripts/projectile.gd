@@ -6,6 +6,7 @@ const PLUS = preload("res://sprites/Projectiles/plus.png")
 
 @onready var timer = $Timer
 @onready var sprite = $Sprite2D
+@onready var animation_player = $AnimationPlayer
 
 @export var hurtbox : Hurtbox
 @export var speed : float = 350
@@ -21,8 +22,8 @@ func _ready():
 	else :
 		sprite.texture = PLUS
 		
-	if hurtbox:
-		hurtbox.effect = effect
+	hurtbox.effect = effect
+	hurtbox.contact.connect(die)
 	
 func _physics_process(delta):
 	
@@ -31,8 +32,14 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	
 	if collision:
-		queue_free()
+		animation_player.play("death")
 
 func _on_timer_timeout():
-	queue_free()
+	die()
 
+func disapear():
+	speed = 0
+	visible = false
+	
+func die():
+	queue_free()

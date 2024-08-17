@@ -3,6 +3,8 @@ extends Area2D
 
 var effect: Constants.StateChange
 
+signal contact()
+
 func _ready() -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
@@ -14,7 +16,7 @@ func _ready() -> void:
 
 
 func on_area_entered(area: Area2D):
-	
 	if (area is Hitbox):
 		area.getHit(effect)
+		contact.emit()
 		

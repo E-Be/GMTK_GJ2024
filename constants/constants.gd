@@ -8,6 +8,6 @@ enum State {
 }
 
 enum StateChange {
-	MINUS = -1,
-	PLUS = +1
+	MINUS,
+	PLUS
 }

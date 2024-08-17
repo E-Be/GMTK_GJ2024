@@ -9,8 +9,7 @@ size = Vector2(18, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_newrs"]
 
-[node name="Crate" type="CharacterBody2D" node_paths=PackedStringArray("hitbox")]
-position = Vector2(0, -9)
+[node name="Crate" type="RigidBody2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_qjtcu")
 hitbox = NodePath("Node2D")
 
@@ -21,7 +20,6 @@ texture = ExtResource("1_caruo")
 shape = SubResource("RectangleShape2D_hplms")
 
 [node name="Node2D" type="Area2D" parent="."]
-priority = 1
 script = ExtResource("3_q473j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
