@@ -1,18 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://53yh466f45gl"]
+[gd_scene load_steps=2 format=3 uid="uid://53yh466f45gl"]
 
 [ext_resource type="PackedScene" uid="uid://6xf46usgtirp" path="res://scenes/title_screen.tscn" id="1_btpv3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_seiph"]
-size = Vector2(426, 20)
 
 [node name="World" type="Node2D"]
 
 [node name="TitleScreen" parent="." instance=ExtResource("1_btpv3")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(548, 438)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_seiph")
-one_way_collision = true
-one_way_collision_margin = 10.0

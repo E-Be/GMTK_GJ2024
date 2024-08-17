@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnfk1qfjgy8lc"]
+[gd_scene load_steps=15 format=3 uid="uid://b42fhvi8pr7q7"]
 
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="1_oa1or"]
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="2_ciuwc"]
@@ -1038,7 +1038,7 @@ sources/1 = SubResource("TileSetAtlasSource_gca4h")
 sources/2 = SubResource("TileSetScenesCollectionSource_cvnnd")
 sources/6 = SubResource("TileSetScenesCollectionSource_38rh7")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2, 0)

@@ -11,10 +11,7 @@ func _ready():
 	setVisible(false)
 	
 func loadNextLevel():
-	print("Loading next level")
-	print(currentScene)
 	if (currentScene.is_valid_int()):
-		print( str(int(currentScene) + 1))
 		nextScene = str(int(currentScene) + 1)
 		transition()
 	
