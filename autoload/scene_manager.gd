@@ -31,4 +31,4 @@ func fadeToNormal():
 	animation_player.play("fade_to_transparent")
 	
 func changeScene():
-	get_tree().change_scene_to_file("res://scenes/level" + nextScene + ".tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level" + nextScene + ".tscn")

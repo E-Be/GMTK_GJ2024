@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc1ckfaomptkl"]
+[gd_scene load_steps=6 format=3 uid="uid://cc1ckfaomptkl"]
 
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="1_map8l"]
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_qee3r"]
+[ext_resource type="Texture2D" uid="uid://c06att8836big" path="res://sprites/Projectiles/minus.png" id="2_uquka"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ata55"]
-radius = 6.08276
+radius = 4.12311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71ys3"]
+radius = 6.0
 
 [node name="Projectile" type="CharacterBody2D"]
 script = ExtResource("1_qee3r")
@@ -15,6 +17,7 @@ script = ExtResource("1_qee3r")
 shape = SubResource("CircleShape2D_ata55")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uquka")
 
 [node name="Timer" type="Timer" parent="."]
 

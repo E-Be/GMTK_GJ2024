@@ -2,7 +2,7 @@ class_name Player
 extends Resizable
 
 
-const SPEED = 300.0
+const SPEED = 150
 
 @export var jumpHeigth: float = 48
 @export var jumpTimeToPeak: float = 0.4
