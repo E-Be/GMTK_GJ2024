@@ -1,16 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ubq53vtoj4iv"]
+[gd_scene load_steps=6 format=3 uid="uid://bxs8hss0q0atc"]
 
 [ext_resource type="Texture2D" uid="uid://dlcitiy03e05" path="res://sprites/Crate.png" id="1_caruo"]
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_qjtcu"]
+[ext_resource type="Script" path="res://components/hit_box.gd" id="3_q473j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hplms"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6jhg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hypty"]
 size = Vector2(18, 18)
 
-[node name="Node2D" type="Node2D"]
+[node name="Crate" type="RigidBody2D"]
+script = ExtResource("1_qjtcu")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_q473j")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_b6jhg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_caruo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_hplms")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hypty")

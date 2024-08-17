@@ -8,7 +8,7 @@
 radius = 4.12311
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71ys3"]
-radius = 7.0
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_jei7l"]
 resource_name = "death"
