@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://f2iess5rqdqg"]
+[gd_scene load_steps=11 format=3 uid="uid://f2iess5rqdqg"]
 
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_rpcxb"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_s1lsl"]
 [ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/door.tscn" id="3_umn01"]
+[ext_resource type="PackedScene" uid="uid://c4w0th13mettp" path="res://scenes/crate.tscn" id="4_jqg84"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="4_nvjr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
@@ -1016,12 +1017,16 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cvnnd"]
 scenes/1/scene = ExtResource("3_umn01")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bjd0w"]
+scenes/1/scene = ExtResource("4_jqg84")
+
 [sub_resource type="TileSet" id="TileSet_4go8o"]
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_e5k7r")
 sources/1 = SubResource("TileSetAtlasSource_gca4h")
 sources/2 = SubResource("TileSetScenesCollectionSource_cvnnd")
+sources/3 = SubResource("TileSetScenesCollectionSource_bjd0w")
 
 [node name="Node2D" type="Node2D"]
 
@@ -1030,7 +1035,7 @@ position = Vector2(-2, 0)
 tile_set = SubResource("TileSet_4go8o")
 rendering_quadrant_size = 18
 format = 2
-layer_0/tile_data = PackedInt32Array(65534, 65537, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 0, 6, 131073, 0, 7, 131073, 0, 8, 196609, 0, -65529, 2, 65536, -131065, 786432, 0, -65533, 458753, 1)
+layer_0/tile_data = PackedInt32Array(65534, 65537, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 0, 6, 131073, 0, 7, 131073, 0, 8, 196609, 0, -65529, 2, 65536, -131065, 786432, 0, -65533, 3, 65536)
 
 [node name="Player" parent="." instance=ExtResource("4_nvjr1")]
 position = Vector2(1, -8)
