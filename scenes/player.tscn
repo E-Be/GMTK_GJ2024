@@ -1,20 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://crwf1ea2sv08o"]
+[gd_scene load_steps=7 format=3 uid="uid://crwf1ea2sv08o"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qa6x8"]
-[ext_resource type="Texture2D" uid="uid://cs5wfgkokec0n" path="res://sprites/player.png" id="2_418tw"]
+[ext_resource type="Texture2D" uid="uid://wwsl3xs31cfp" path="res://sprites/Player/player1.png" id="2_t2rxc"]
+[ext_resource type="Texture2D" uid="uid://d0lmrx0ebmx1a" path="res://sprites/Player/player2.png" id="3_hty5m"]
 [ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="3_og2vn"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0auw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t2rxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hty5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0y6j"]
-height = 20.0
+radius = 8.0
+height = 18.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_qa6x8")
+jumpHeigth = 27.0
 weapon = NodePath("Weapon")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_418tw")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_i0auw")
+autoplay = "default"
+frame_progress = 0.541872
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_g0y6j")
 
 [node name="Weapon" parent="." instance=ExtResource("3_og2vn")]
