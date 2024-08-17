@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://crwf1ea2sv08o"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_qa6x8"]
+[ext_resource type="Texture2D" uid="uid://cs5wfgkokec0n" path="res://sprites/player.png" id="2_418tw"]
+[ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="3_og2vn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0y6j"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
+script = ExtResource("1_qa6x8")
+weapon = NodePath("Weapon")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_418tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_g0y6j")
+
+[node name="Weapon" parent="." instance=ExtResource("3_og2vn")]

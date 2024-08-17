@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc1ckfaomptkl"]
+
+[ext_resource type="Script" path="res://components/hurt_box.gd" id="1_map8l"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_qee3r"]
+[ext_resource type="Texture2D" uid="uid://cs5wfgkokec0n" path="res://sprites/player.png" id="2_iau1n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ata55"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71ys3"]
+
+[node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_qee3r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ata55")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iau1n")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("1_map8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_71ys3")
