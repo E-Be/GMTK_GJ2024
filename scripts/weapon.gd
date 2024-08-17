@@ -32,7 +32,7 @@ func instantiate_projectile(effect: Constants.StateChange, direction : Vector2):
 	get_tree().get_root().add_child(newProjectile)
 	
 	newProjectile.direction = direction
-	newProjectile.global_position = global_position
+	newProjectile.global_position = global_position + direction * 32
 		
 func on_fire_timer_timeout():
 	canFire = true

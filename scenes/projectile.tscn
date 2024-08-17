@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cs5wfgkokec0n" path="res://sprites/player.png" id="2_iau1n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ata55"]
+radius = 6.08276
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71ys3"]
 

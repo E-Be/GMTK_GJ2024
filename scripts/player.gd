@@ -13,6 +13,7 @@ const SPEED = 300.0
 @onready var jump_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToPeak)) * -1
 @onready var fall_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToDescent)) * -1
 
+var shootDirection: Vector2 = Vector2(1,0)
 
 func jump():
 	velocity.y = jump_velocity
@@ -33,16 +34,21 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
+		shootDirection = Vector2(direction, 0)
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+	var directionY = Input.get_axis("look_up", "look_down")
+	if directionY:
+		shootDirection = Vector2(0, directionY)
+		
 	#Shoot
 	if Input.is_action_pressed("shoot_minus"):
 		if weapon:
-			weapon.fire(Constants.StateChange.MINUS, Vector2(1,0))
+			weapon.fire(Constants.StateChange.MINUS, shootDirection)
 	if Input.is_action_pressed("shoot_plus"):
 		if weapon:
-			weapon.fire(Constants.StateChange.PLUS, Vector2(1,0))
+			weapon.fire(Constants.StateChange.PLUS, shootDirection)
 
 	move_and_slide()

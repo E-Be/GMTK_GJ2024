@@ -4,7 +4,7 @@ class_name Projectile
 @onready var timer = $Timer
 
 @export var hurtbox : Hurtbox
-@export var speed : float = 200
+@export var speed : float = 350
 
 var effect: Constants.StateChange
 var direction: Vector2

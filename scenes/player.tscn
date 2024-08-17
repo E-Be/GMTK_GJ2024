@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="3_og2vn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0y6j"]
+height = 20.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_qa6x8")
