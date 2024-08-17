@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc1ckfaomptkl"]
+[gd_scene load_steps=5 format=3 uid="uid://cc1ckfaomptkl"]
 
 [ext_resource type="Script" path="res://components/hurt_box.gd" id="1_map8l"]
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_qee3r"]
-[ext_resource type="Texture2D" uid="uid://cs5wfgkokec0n" path="res://sprites/player.png" id="2_iau1n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ata55"]
 radius = 6.08276
@@ -16,7 +15,6 @@ script = ExtResource("1_qee3r")
 shape = SubResource("CircleShape2D_ata55")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_iau1n")
 
 [node name="Timer" type="Timer" parent="."]
 

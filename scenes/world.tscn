@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://53yh466f45gl"]
+[gd_scene load_steps=3 format=3 uid="uid://53yh466f45gl"]
 
 [ext_resource type="PackedScene" uid="uid://6xf46usgtirp" path="res://scenes/title_screen.tscn" id="1_3mt1e"]
-[ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="1_jt6cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seiph"]
 size = Vector2(426, 20)
@@ -9,9 +8,6 @@ size = Vector2(426, 20)
 [node name="World" type="Node2D"]
 
 [node name="TitleScreen" parent="." instance=ExtResource("1_3mt1e")]
-
-[node name="Player" parent="." instance=ExtResource("1_jt6cq")]
-position = Vector2(544, 281)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(548, 438)
