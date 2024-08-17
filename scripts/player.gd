@@ -1,3 +1,4 @@
+class_name Player
 extends Resizable
 
 
@@ -14,6 +15,7 @@ const SPEED = 300.0
 @onready var fall_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToDescent)) * -1
 
 var shootDirection: Vector2 = Vector2(1,0)
+var canMove = true
 
 func jump():
 	velocity.y = jump_velocity
@@ -51,4 +53,7 @@ func _physics_process(delta):
 		if weapon:
 			weapon.fire(Constants.StateChange.PLUS, shootDirection)
 
+	if not canMove:
+		velocity.x = 0
+	
 	move_and_slide()

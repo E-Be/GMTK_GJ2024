@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_rpcxb"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_s1lsl"]
 [ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/door.tscn" id="3_umn01"]
-[ext_resource type="PackedScene" uid="uid://c4w0th13mettp" path="res://scenes/crate.tscn" id="4_jqg84"]
+[ext_resource type="PackedScene" uid="uid://ubq53vtoj4iv" path="res://scenes/crate.tscn" id="4_jqg84"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="4_nvjr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]

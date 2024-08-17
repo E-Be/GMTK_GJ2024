@@ -4,12 +4,22 @@ extends CanvasLayer
 @onready var color_rect = $ColorRect
 
 var nextScene:String
+var currentScene:String
 
 func _ready():
+	currentScene = "World"
 	setVisible(false)
 	
+func loadNextLevel():
+	print("Loading next level")
+	print(currentScene)
+	if (currentScene.is_valid_int()):
+		print( str(int(currentScene) + 1))
+		nextScene = str(int(currentScene) + 1)
+		transition()
+	
 func loadLevel(level: String):
-	nextScene = "res://scenes/level" + level + ".tscn"
+	nextScene = level
 	transition()
 
 func transition():
@@ -20,7 +30,8 @@ func setVisible(visible: bool):
 	color_rect.visible = visible
 	
 func fadeToNormal():
+	currentScene = nextScene
 	animation_player.play("fade_to_transparent")
 	
 func changeScene():
-	get_tree().change_scene_to_file(nextScene)
+	get_tree().change_scene_to_file("res://scenes/level" + nextScene + ".tscn")
