@@ -1019,7 +1019,6 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cvnnd"]
 resource_name = "Objects"
 scenes/1/scene = ExtResource("3_o4xkk")
-scenes/2/scene = ExtResource("4_p6tsp")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ny5jf"]
 resource_name = "Controls"
@@ -1041,7 +1040,7 @@ position = Vector2(-2, 0)
 tile_set = SubResource("TileSet_4go8o")
 rendering_quadrant_size = 18
 format = 2
-layer_0/tile_data = PackedInt32Array(65534, 65537, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 0, 6, 131073, 0, 7, 131073, 0, 8, 196609, 0, -65529, 2, 65536, -131065, 786432, 0, -65532, 2, 131072, -131074, 4, 65536, -196605, 4, 131072)
+layer_0/tile_data = PackedInt32Array(65534, 65537, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 0, 6, 131073, 0, 7, 131073, 0, 8, 196609, 0, -65529, 2, 65536, -131065, 786432, 0, -131074, 4, 65536, -196605, 4, 131072)
 
 [node name="Player" parent="." instance=ExtResource("7_ers4v")]
 position = Vector2(1, -8)
@@ -1049,3 +1048,8 @@ position = Vector2(1, -8)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(64, -9)
 zoom = Vector2(4, 4)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Crate" parent="Node" instance=ExtResource("4_p6tsp")]
+position = Vector2(79, -9)
