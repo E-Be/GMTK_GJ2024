@@ -15,8 +15,6 @@ var mult = 1
 
 func _ready():
 
-	collision_shape_2d = collision_shape_2d.duplicate()
-
 	hitbox.hit.connect(tryStateChange)
 		
 	if (state == Constants.State.SMALL):

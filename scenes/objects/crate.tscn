@@ -6,8 +6,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6jhg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hypty"]
-size = Vector2(18, 18)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upgff"]
+resource_local_to_scene = true
 
 [node name="Crate" type="RigidBody2D"]
 script = ExtResource("1_qjtcu")
@@ -22,4 +22,4 @@ shape = SubResource("RectangleShape2D_b6jhg")
 texture = ExtResource("1_caruo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hypty")
+shape = SubResource("RectangleShape2D_upgff")

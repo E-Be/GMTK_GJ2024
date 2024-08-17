@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc5i3pao7roud"]
+[gd_scene load_steps=2 format=3 uid="uid://dc5i3pao7roud"]
 
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="1_ur8te"]
-[ext_resource type="Texture2D" uid="uid://dakgyjjrg4jj" path="res://sprites/weapon.png" id="2_y65aj"]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_ur8te")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_y65aj")
