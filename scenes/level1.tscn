@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://b42fhvi8pr7q7"]
+[gd_scene load_steps=15 format=3 uid="uid://dnfk1qfjgy8lc"]
 
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="1_oa1or"]
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="2_ciuwc"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="3_404dm"]
-[ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/door.tscn" id="4_i2hhq"]
+[ext_resource type="PackedScene" uid="uid://b2gnk1jley767" path="res://scenes/keys and buttons/keys/a-key.tscn" id="4_451p6"]
+[ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/objects/door.tscn" id="4_i2hhq"]
+[ext_resource type="PackedScene" uid="uid://byusgyfq2y1s8" path="res://scenes/keys and buttons/keys/d-key.tscn" id="5_ijrmf"]
+[ext_resource type="PackedScene" uid="uid://bmxfo4u7qvkjm" path="res://scenes/keys and buttons/buttons/left-right-stick.tscn" id="5_ptk75"]
+[ext_resource type="PackedScene" uid="uid://dw3be88s1vlmb" path="res://scenes/keys and buttons/keys/left-key.tscn" id="6_jj556"]
+[ext_resource type="PackedScene" uid="uid://c4eskp1i88fyy" path="res://scenes/keys and buttons/keys/right-key.tscn" id="7_sbvdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
 texture = ExtResource("2_ciuwc")
@@ -1014,7 +1019,16 @@ texture_region_size = Vector2i(18, 18)
 19:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cvnnd"]
+resource_name = "Objects"
 scenes/1/scene = ExtResource("4_i2hhq")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_38rh7"]
+resource_name = "Controls"
+scenes/1/scene = ExtResource("4_451p6")
+scenes/2/scene = ExtResource("5_ijrmf")
+scenes/8/scene = ExtResource("6_jj556")
+scenes/9/scene = ExtResource("7_sbvdo")
+scenes/10/scene = ExtResource("5_ptk75")
 
 [sub_resource type="TileSet" id="TileSet_4go8o"]
 tile_size = Vector2i(18, 18)
@@ -1022,6 +1036,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_e5k7r")
 sources/1 = SubResource("TileSetAtlasSource_gca4h")
 sources/2 = SubResource("TileSetScenesCollectionSource_cvnnd")
+sources/6 = SubResource("TileSetScenesCollectionSource_38rh7")
 
 [node name="Node2D" type="Node2D"]
 
@@ -1030,10 +1045,10 @@ position = Vector2(-2, 0)
 tile_set = SubResource("TileSet_4go8o")
 rendering_quadrant_size = 18
 format = 2
-layer_0/tile_data = PackedInt32Array(65534, 65537, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 0, 6, 131073, 0, 7, 131073, 0, 8, 196609, 0, -65529, 2, 65536, -131065, 786432, 0)
+layer_0/tile_data = PackedInt32Array(65534, 65537, 0, 65535, 131073, 0, 0, 131073, 0, 1, 131073, 0, 2, 131073, 0, 3, 131073, 0, 4, 131073, 0, 5, 131073, 0, 6, 131073, 0, 7, 131073, 0, 8, 196609, 0, -65529, 2, 65536, -131065, 786432, 0, -131073, 6, 65536, -196607, 6, 131072, -196609, 6, 524288, -262143, 6, 589824, -196605, 6, 655360)
 
 [node name="Player" parent="." instance=ExtResource("1_oa1or")]
-position = Vector2(0, -8)
+position = Vector2(1, -8)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(64, -9)
