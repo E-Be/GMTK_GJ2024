@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/objects/door.tscn" id="3_cqh5k"]
 [ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_wqob3"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="5_upb5g"]
-[ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/crate.tscn" id="6_c7816"]
+[ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="6_c7816"]
 [ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="7_cq0su"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
@@ -1107,12 +1107,12 @@ zoom = Vector2(4, 4)
 [node name="Objects" type="Node" parent="."]
 
 [node name="Crate1" parent="Objects" instance=ExtResource("6_c7816")]
-position = Vector2(22, 19)
+position = Vector2(23, 19)
 scale = Vector2(2, 2)
 state = 2
 
 [node name="Crate2" parent="Objects" instance=ExtResource("6_c7816")]
-position = Vector2(154.5, 32.5)
+position = Vector2(61, 33)
 scale = Vector2(0.5, 0.5)
 
 [node name="Weapon" parent="Objects" instance=ExtResource("7_cq0su")]
