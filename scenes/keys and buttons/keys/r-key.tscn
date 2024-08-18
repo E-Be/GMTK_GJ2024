@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpysewrkypxu6"]
+
+[ext_resource type="Texture2D" uid="uid://dkog0nsxcul78" path="res://sprites/gdb-keyboard-2.png" id="1_8pj2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86753"]
+atlas = ExtResource("1_8pj2c")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqak4"]
+atlas = ExtResource("1_8pj2c")
+region = Rect2(112, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmj1l"]
+atlas = ExtResource("1_8pj2c")
+region = Rect2(112, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bulp2"]
+atlas = ExtResource("1_8pj2c")
+region = Rect2(112, 384, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22qhs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86753")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqak4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmj1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bulp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="A-key" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_22qhs")
+autoplay = "default"
+frame_progress = 0.376781
