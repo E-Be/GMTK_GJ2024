@@ -52,6 +52,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot_plus"):
 		if weapon:
 			weapon.fire(Constants.StateChange.PLUS, shootDirection)
+			
+	#Reset level
+	if Input.is_action_pressed("reload_scene"):
+		SceneManager.reloadScene()
 
 	if not canMove:
 		velocity.x = 0

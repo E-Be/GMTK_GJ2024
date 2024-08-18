@@ -32,3 +32,6 @@ func fadeToNormal():
 	
 func changeScene():
 	get_tree().change_scene_to_file("res://scenes/levels/level" + nextScene + ".tscn")
+	
+func reloadScene():
+	loadLevel(currentScene)

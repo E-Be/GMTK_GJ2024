@@ -30,22 +30,13 @@ offset_bottom = 323.0
 theme = SubResource("Theme_68fwr")
 text = "Start"
 
-[node name="Button2" type="Button" parent="."]
+[node name="LevelSelect" type="Button" parent="."]
 layout_mode = 0
 offset_left = 134.0
 offset_top = 356.0
 offset_right = 774.0
 offset_bottom = 476.0
 text = "Level select
-"
-
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 124.0
-offset_top = 525.0
-offset_right = 764.0
-offset_bottom = 645.0
-text = "Options
 "
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cixk4qvqwuji5"]
+[gd_scene load_steps=13 format=3 uid="uid://cixk4qvqwuji5"]
 
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_02tjl"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_oxum2"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_5eat3"]
 [ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="5_04ck0"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="6_bsyuk"]
-[ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="7_77r12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
 texture = ExtResource("1_02tjl")
