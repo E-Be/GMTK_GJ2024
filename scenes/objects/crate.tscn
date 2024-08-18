@@ -27,3 +27,9 @@ texture = ExtResource("1_caruo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_upgff")
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

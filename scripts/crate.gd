@@ -9,13 +9,12 @@ extends PhysicsBody2D
 @onready  var hitbox: Hitbox = $Hitbox
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var sprite_2d = $Sprite2D
+@onready var hit_timer = $HitTimer
 
 var mult = 1
 
 
 func _ready():
-	
-
 	hitbox.hit.connect(tryStateChange)
 		
 	if (state == Constants.State.SMALL):
@@ -26,6 +25,10 @@ func _ready():
 
 
 func tryStateChange(change: Constants.StateChange):
+	
+	hitbox.hit.disconnect(tryStateChange)
+	hit_timer.start(0.5)
+	
 	print("Try stage change")
 	print(change)
 	
@@ -64,3 +67,7 @@ func resize():
 			hitbox.scale = Vector2(2,2)
  
 	collision_shape_2d.shape.set_size(lastSize * mult)
+
+
+func _on_hit_timer_timeout():
+	hitbox.hit.connect(tryStateChange)

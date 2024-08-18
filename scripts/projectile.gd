@@ -43,6 +43,7 @@ func disapear():
 	speed = 0
 	sprite.visible = false
 	collision_shape_2d.set_deferred("disabled", true)
+	collision_shape_2d.set_deferred("monitoring", false)
 	
 func die():
 	var newParticules = EXPLOSION_PARTICULES.instantiate()
