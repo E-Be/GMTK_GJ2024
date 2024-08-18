@@ -1109,3 +1109,4 @@ zoom = Vector2(4, 4)
 [node name="Node" type="Node" parent="."]
 
 [node name="Crate" parent="Node" instance=ExtResource("8_t5o08")]
+position = Vector2(81, -9)
