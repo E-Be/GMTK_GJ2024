@@ -61,10 +61,7 @@ func _physics_process(delta):
 		
 	var directionY = Input.get_axis("look_up", "look_down")
 	if directionY:
-		if directionY > 0 and is_on_floor():
-			pass
-		else:
-			shootDirection = Vector2(0, directionY)
+		shootDirection = Vector2(0, directionY)
 		
 	#Shoot
 	if Input.is_action_pressed("shoot_minus"):
