@@ -8,11 +8,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upgff"]
 resource_local_to_scene = true
+size = Vector2(18, 18)
 
 [node name="Crate" type="RigidBody2D"]
 script = ExtResource("1_qjtcu")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_q473j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
