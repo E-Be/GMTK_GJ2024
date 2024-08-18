@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_wqob3"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="5_upb5g"]
 [ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="6_c7816"]
-[ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="7_cq0su"]
+[ext_resource type="PackedScene" uid="uid://btslipk0ip2uj" path="res://scenes/objects/weapon_getter.tscn" id="7_7dcpi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
 texture = ExtResource("1_05ppw")
@@ -1115,5 +1115,5 @@ state = 2
 position = Vector2(61, 33)
 scale = Vector2(0.5, 0.5)
 
-[node name="Weapon" parent="Objects" instance=ExtResource("7_cq0su")]
-position = Vector2(-23, 30)
+[node name="WeaponGetter" parent="Objects" instance=ExtResource("7_7dcpi")]
+position = Vector2(-24, 29)
