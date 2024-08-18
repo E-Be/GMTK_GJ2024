@@ -6,7 +6,7 @@ const SPEED = 150
 @export var jumpTimeToPeak: float = 0.4
 @export var jumpTimeToDescent: float = 0.25
 
-@export var push_force = 10
+@export var push_force = 15
 
 @export var weapon: Weapon
 
