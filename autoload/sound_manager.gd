@@ -32,3 +32,4 @@ func playMenuMusic():
 func playLevelMusic():
 	music.stream = levelMusic
 	music.play()
+	
