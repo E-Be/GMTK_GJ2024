@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4k0jhv4w4oos"]
+
+[ext_resource type="Texture2D" uid="uid://7k132dwkg78i" path="res://sprites/gdb-xbox-2.png" id="1_0yk4c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq4m5"]
+atlas = ExtResource("1_0yk4c")
+region = Rect2(280, 72, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t33hk"]
+atlas = ExtResource("1_0yk4c")
+region = Rect2(280, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5rj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq4m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t33hk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="A-key" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g5rj8")
+autoplay = "default"
+frame_progress = 0.311562
