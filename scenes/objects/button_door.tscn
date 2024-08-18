@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnnnvqsff73hv"]
 
 [ext_resource type="Script" path="res://scripts/button_door.gd" id="1_bva8x"]
-[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="2_novvv"]
+[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TileMaps/industrial_tilemap_packed.png" id="2_novvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0q5s"]
 texture = ExtResource("2_novvv")
