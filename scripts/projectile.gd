@@ -43,3 +43,4 @@ func disapear():
 	
 func die():
 	queue_free()
+

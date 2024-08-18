@@ -13,9 +13,11 @@ const SPEED = 150
 @onready var jump_velocity: float = ((2.0 * jumpHeigth) / jumpTimeToPeak ) * -1
 @onready var jump_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToPeak)) * -1
 @onready var fall_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToDescent)) * -1
+@onready var coyote_jump_timer = $CoyoteJumpTimer
 
 var shootDirection: Vector2 = Vector2(1,0)
 var canMove = true
+var isCoyoteJumpAvailable = true
 
 func jump():
 	velocity.y = jump_velocity
@@ -27,10 +29,19 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += getGravity() * delta
+		if coyote_jump_timer.is_stopped() and isCoyoteJumpAvailable:
+			coyote_jump_timer.start()
+	else:
+		isCoyoteJumpAvailable = true
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and canMove:
-		jump()
+	if Input.is_action_just_pressed("jump") and canMove:
+		if is_on_floor():
+			jump()
+			isCoyoteJumpAvailable = false
+		elif not coyote_jump_timer.is_stopped() and isCoyoteJumpAvailable:
+			isCoyoteJumpAvailable = false
+			jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -66,3 +77,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if (collision.get_collider() is Crate && collision.get_collider().state == Constants.State.SMALL):
 			collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
+
+
+func _on_coyote_jump_timer_timeout():
+	isCoyoteJumpAvailable = false

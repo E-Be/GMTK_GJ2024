@@ -38,3 +38,9 @@ frame_progress = 0.541872
 shape = SubResource("CapsuleShape2D_g0y6j")
 
 [node name="Weapon" parent="." instance=ExtResource("3_og2vn")]
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="CoyoteJumpTimer" to="." method="_on_coyote_jump_timer_timeout"]
