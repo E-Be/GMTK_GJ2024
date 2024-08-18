@@ -5,6 +5,8 @@ extends Node
 @onready var jump = %Jump
 @onready var button_click_on = %ButtonClickOn
 @onready var button_click_off = %ButtonClickOff
+var menuMusic = preload("res://audio/menu.mp3")
+var levelMusic = preload("res://audio/level.mp3")
 
 func playZap():
 	zap.play()
@@ -17,3 +19,12 @@ func playButtonOn():
 	
 func playButtonOff():
 	button_click_off.play()
+	
+func playLevelMusic():
+	music.stream = levelMusic
+	music.play()
+	
+func playMenuMusic():
+	music.stream = menuMusic
+	print(menuMusic)
+	music.play()

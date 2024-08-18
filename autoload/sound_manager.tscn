@@ -11,6 +11,7 @@ script = ExtResource("1_xwem3")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+bus = &"Music"
 
 [node name="Zap" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
