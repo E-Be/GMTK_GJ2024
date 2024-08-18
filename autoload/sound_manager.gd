@@ -26,5 +26,4 @@ func playLevelMusic():
 	
 func playMenuMusic():
 	music.stream = menuMusic
-	print(menuMusic)
 	music.play()
