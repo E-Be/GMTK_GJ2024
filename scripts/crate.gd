@@ -31,11 +31,9 @@ func tryStateChange(change: Constants.StateChange):
 	
 	match(change):
 		Constants.StateChange.MINUS when state == Constants.State.SMALL: 
-			print("Tried to resize min object")
-			#TODO animation 
+			SoundManager.playError()
 		Constants.StateChange.PLUS when state == Constants.State.BIG: 
-			print("Tried to resize max object")
-			#TODO animation 
+			SoundManager.playError()
 		_: 
 			changeState(change)  
 			

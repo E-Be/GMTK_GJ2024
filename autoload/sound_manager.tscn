@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://tjdbt2nvu1br"]
+[gd_scene load_steps=7 format=3 uid="uid://tjdbt2nvu1br"]
 
 [ext_resource type="Script" path="res://autoload/sound_manager.gd" id="1_xwem3"]
 [ext_resource type="AudioStream" uid="uid://c7cwod8fwfhsw" path="res://audio/laser_beam.mp3" id="2_qk565"]
 [ext_resource type="AudioStream" uid="uid://d2m2rxbl4ui2j" path="res://audio/jump.mp3" id="3_jas6p"]
 [ext_resource type="AudioStream" uid="uid://cxg7dh1u6jo4i" path="res://audio/button_on.mp3" id="4_8pwqt"]
 [ext_resource type="AudioStream" uid="uid://qpv8jrptcxii" path="res://audio/button_off.mp3" id="5_ih7ln"]
+[ext_resource type="AudioStream" uid="uid://3kpl81c0jpat" path="res://audio/error.mp3" id="6_opb2h"]
 
 [node name="Sound" type="Node"]
 script = ExtResource("1_xwem3")
@@ -31,4 +32,9 @@ bus = &"SFX"
 [node name="ButtonClickOff" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_ih7ln")
+bus = &"SFX"
+
+[node name="Error" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_opb2h")
 bus = &"SFX"

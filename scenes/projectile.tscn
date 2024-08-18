@@ -27,7 +27,7 @@ tracks/0/keys = {
 "method": &"disapear"
 }, {
 "args": [],
-"method": &"die"
+"method": &"queue_free"
 }]
 }
 
@@ -49,6 +49,8 @@ texture = ExtResource("2_uquka")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_map8l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]

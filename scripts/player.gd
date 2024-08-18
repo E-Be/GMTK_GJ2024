@@ -14,6 +14,7 @@ const SPEED = 150
 @onready var jump_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToPeak)) * -1
 @onready var fall_gravity: float = ((-2.0 * jumpHeigth) / (jumpTimeToPeak * jumpTimeToDescent)) * -1
 @onready var coyote_jump_timer = $CoyoteJumpTimer
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var shootDirection: Vector2 = Vector2(1,0)
 var canMove = true
@@ -48,6 +49,11 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
+		if direction > 0:
+			animated_sprite_2d.flip_h = true
+		else:
+			animated_sprite_2d.flip_h = false
+			
 		shootDirection = Vector2(direction, 0)
 		velocity.x = direction * SPEED
 	else:
@@ -55,7 +61,10 @@ func _physics_process(delta):
 		
 	var directionY = Input.get_axis("look_up", "look_down")
 	if directionY:
-		shootDirection = Vector2(0, directionY)
+		if directionY > 0 and is_on_floor():
+			pass
+		else:
+			shootDirection = Vector2(0, directionY)
 		
 	#Shoot
 	if Input.is_action_pressed("shoot_minus"):
