@@ -1108,10 +1108,10 @@ zoom = Vector2(4, 4)
 [node name="Objects" type="Node" parent="."]
 
 [node name="Crate" parent="Objects" instance=ExtResource("6_mb6q0")]
-position = Vector2(-26, -82)
+position = Vector2(-28, -81)
 
 [node name="Crate2" parent="Objects" instance=ExtResource("6_mb6q0")]
-position = Vector2(-7, -82)
+position = Vector2(-3, -82)
 
 [node name="Door1" type="Node" parent="."]
 
