@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://b1d35klfy0avb"]
 
-[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_gdkvh"]
-[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_q4o6a"]
+[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TileMaps/industrial_tilemap_packed.png" id="1_gdkvh"]
+[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TileMaps/tilemap_packed.png" id="2_q4o6a"]
 [ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/objects/door.tscn" id="3_njgua"]
-[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_pfgii"]
+[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TileMaps/Background.png" id="4_pfgii"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="5_e5pbr"]
 [ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="6_x24dh"]
 [ext_resource type="PackedScene" uid="uid://u2s3p4kk16uk" path="res://scenes/objects/button.tscn" id="7_k038w"]

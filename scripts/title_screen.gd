@@ -7,6 +7,7 @@ extends Control
 var levelButton = preload("res://scenes/level_button.tscn")
 
 func _ready():
+	SoundManager.playMenuMusic()
 	for i in range(nbOfLevel):
 		var newButton = levelButton.instantiate()
 		newButton.number = str(i+1)
@@ -14,6 +15,7 @@ func _ready():
 		
 
 func _on_start_button_pressed():
+	SoundManager.playLevelMusic()
 	self.visible = false
 	SceneManager.loadLevel("1")
 	pass # Replace with function body.

@@ -6,6 +6,9 @@ extends Node
 @onready var button_click_on = %ButtonClickOn
 @onready var button_click_off = %ButtonClickOff
 @onready var error = %Error
+var menuMusic = preload("res://audio/menu.mp3")
+var levelMusic = preload("res://audio/level.mp3")
+
 
 func playZap():
 	zap.play()
@@ -18,6 +21,3 @@ func playButtonOn():
 	
 func playButtonOff():
 	button_click_off.play()
-
-func playError():
-	error.play()
