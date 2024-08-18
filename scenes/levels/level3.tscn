@@ -1110,7 +1110,7 @@ zoom = Vector2(4, 4)
 position = Vector2(-5, 27)
 
 [node name="Crate2" parent="Objects" instance=ExtResource("5_04ck0")]
-position = Vector2(26, 18)
+position = Vector2(27, 17)
 scale = Vector2(2, 2)
 state = 2
 
@@ -1118,6 +1118,3 @@ state = 2
 position = Vector2(152, 32)
 scale = Vector2(0.5, 0.5)
 state = 0
-
-[node name="Weapon" parent="Objects" instance=ExtResource("7_77r12")]
-position = Vector2(-35, 30)
