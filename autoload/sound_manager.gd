@@ -1,6 +1,7 @@
 extends Node
 
 @onready var music = %Music
+@onready var door = %Door
 @onready var zap = %Zap
 @onready var jump = %Jump
 @onready var button_click_on = %ButtonClickOn
@@ -28,6 +29,9 @@ func playError():
 func playMenuMusic():
 	music.stream = menuMusic
 	music.play()
+	
+func playDoorSound():
+	door.play()
 	
 func playLevelMusic():
 	music.stream = levelMusic
