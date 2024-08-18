@@ -11,6 +11,7 @@ resource_local_to_scene = true
 size = Vector2(18, 18)
 
 [node name="Crate" type="RigidBody2D"]
+can_sleep = false
 script = ExtResource("1_qjtcu")
 
 [node name="Hitbox" type="Area2D" parent="."]
