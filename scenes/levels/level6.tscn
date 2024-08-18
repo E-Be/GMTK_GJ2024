@@ -1,4 +1,5 @@
 [gd_scene load_steps=13 format=3 uid="uid://b7amcp1iyh704"]
+[gd_scene load_steps=13 format=3 uid="uid://b7amcp1iyh704"]
 
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_ta3c5"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_1j3h5"]
@@ -1087,7 +1088,7 @@ sources/3 = SubResource("TileSetAtlasSource_mwf16")
 position = Vector2(3, -2)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-6, 39)
+position = Vector2(-14, 54)
 tile_set = SubResource("TileSet_4go8o")
 rendering_quadrant_size = 18
 format = 2
@@ -1101,7 +1102,7 @@ position = Vector2(-62, 31)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(56, -13)
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 
 [node name="Objects" type="Node" parent="."]
 
