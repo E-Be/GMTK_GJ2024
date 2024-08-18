@@ -1,14 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://cixk4qvqwuji5"]
+[gd_scene load_steps=22 format=3 uid="uid://cixk4qvqwuji5"]
 
-[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TileMaps/industrial_tilemap_packed.png" id="1_02tjl"]
-[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TileMaps/tilemap_packed.png" id="2_oxum2"]
+[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_02tjl"]
+[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_oxum2"]
 [ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/objects/door.tscn" id="3_x5krw"]
-[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TileMaps/Background.png" id="4_5eat3"]
+[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_5eat3"]
 [ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="5_04ck0"]
-[ext_resource type="PackedScene" uid="uid://b4k0jhv4w4oos" path="res://scenes/keys and buttons/buttons/r3-stick.tscn" id="5_fa5o3"]
-[ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="6_bsyuk"]
-[ext_resource type="PackedScene" uid="uid://cpysewrkypxu6" path="res://scenes/keys and buttons/keys/r-key.tscn" id="6_rr76s"]
+[ext_resource type="PackedScene" path="res://scenes/keys and buttons/buttons/r3-stick.tscn" id="5_fa5o3"]
+[ext_resource type="PackedScene" path="res://scenes/keys and buttons/keys/r-key.tscn" id="6_rr76s"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="7_nw14w"]
+[ext_resource type="Texture2D" uid="uid://wwsl3xs31cfp" path="res://sprites/Player/player1.png" id="8_ul12d"]
+[ext_resource type="Texture2D" uid="uid://d0lmrx0ebmx1a" path="res://sprites/Player/player2.png" id="9_5o4vb"]
 [ext_resource type="FontFile" uid="uid://dyk5seluywc3r" path="res://sprites/Font/at01.ttf" id="9_tlmh0"]
+[ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="10_xem7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
 texture = ExtResource("1_02tjl")
@@ -1088,6 +1091,24 @@ sources/2 = SubResource("TileSetScenesCollectionSource_cvnnd")
 sources/4 = SubResource("TileSetScenesCollectionSource_ny5jf")
 sources/3 = SubResource("TileSetAtlasSource_mwf16")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0auw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ul12d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5o4vb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0y6j"]
+radius = 6.0
+height = 16.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_sttmw"]
 font = ExtResource("9_tlmh0")
 
@@ -1104,8 +1125,25 @@ layer_0/tile_data = PackedInt32Array(-458757, 196611, 3, -393221, 196611, 3, -32
 layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(65532, 65537, 1, 65533, 131073, 1, 65534, 131073, 1, 65535, 131073, 1, 0, 131073, 1, 1, 131073, 1, 2, 131073, 1, 3, 131073, 1, 4, 131073, 1, 5, 131073, 1, 6, 131073, 1, 7, 131073, 1, 8, 131073, 1, 10, 262145, 5, -65526, 262145, 5, -65527, 262145, 5, 9, 262145, 5, -131063, 131073, 1, -131062, 131073, 1, -196598, 2, 65536, -262134, 786432, 0, -393205, 262145, 5, -327669, 262145, 5, -262133, 262145, 5, -196597, 262145, 5, -131061, 262145, 5, -65525, 262145, 5, 11, 262145, 5, -458741, 131073, 1, -196609, 4, 131072, -262143, 4, 65536)
 
-[node name="Player" parent="." instance=ExtResource("6_bsyuk")]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(-68, 31)
+script = ExtResource("7_nw14w")
+jumpHeigth = 27.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_i0auw")
+autoplay = "default"
+frame_progress = 0.541872
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_g0y6j")
+
+[node name="Weapon" parent="Player" instance=ExtResource("10_xem7l")]
+
+[node name="CoyoteJumpTimer" type="Timer" parent="Player"]
+wait_time = 0.2
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(64, -9)
@@ -1133,3 +1171,5 @@ offset_right = -38.0
 offset_bottom = -18.0
 text = "Stuck?"
 label_settings = SubResource("LabelSettings_sttmw")
+
+[connection signal="timeout" from="Player/CoyoteJumpTimer" to="Player" method="_on_coyote_jump_timer_timeout"]

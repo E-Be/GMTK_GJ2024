@@ -1,18 +1,21 @@
-[gd_scene load_steps=20 format=3 uid="uid://dymliqjfjf70j"]
+[gd_scene load_steps=25 format=3 uid="uid://dymliqjfjf70j"]
 
-[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TileMaps/industrial_tilemap_packed.png" id="1_05ppw"]
-[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TileMaps/tilemap_packed.png" id="2_ah2p3"]
+[ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_05ppw"]
+[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_ah2p3"]
 [ext_resource type="PackedScene" uid="uid://b7cfju8j4mdqd" path="res://scenes/objects/door.tscn" id="3_cqh5k"]
-[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TileMaps/Background.png" id="4_wqob3"]
-[ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="5_upb5g"]
-[ext_resource type="PackedScene" uid="uid://c0nyakbjnb716" path="res://scenes/keys and buttons/keys/left_mouse.tscn" id="5_vumxy"]
-[ext_resource type="PackedScene" uid="uid://d23kgtpkl2cm6" path="res://scenes/keys and buttons/keys/right_mouse.tscn" id="6_a87g4"]
+[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_wqob3"]
+[ext_resource type="PackedScene" path="res://scenes/keys and buttons/keys/left_mouse.tscn" id="5_vumxy"]
+[ext_resource type="PackedScene" path="res://scenes/keys and buttons/keys/right_mouse.tscn" id="6_a87g4"]
 [ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="6_c7816"]
 [ext_resource type="PackedScene" uid="uid://btslipk0ip2uj" path="res://scenes/objects/weapon_getter.tscn" id="7_7dcpi"]
-[ext_resource type="PackedScene" uid="uid://ugcqv82eim5c" path="res://scenes/keys and buttons/buttons/r1-button.tscn" id="7_wwjyu"]
-[ext_resource type="PackedScene" uid="uid://cv2ihu4s542m3" path="res://scenes/keys and buttons/buttons/l1-button.tscn" id="8_w32xu"]
+[ext_resource type="PackedScene" path="res://scenes/keys and buttons/buttons/r1-button.tscn" id="7_wwjyu"]
+[ext_resource type="PackedScene" path="res://scenes/keys and buttons/buttons/l1-button.tscn" id="8_w32xu"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="9_e43y0"]
+[ext_resource type="Texture2D" uid="uid://wwsl3xs31cfp" path="res://sprites/Player/player1.png" id="10_5llv7"]
 [ext_resource type="Texture2D" uid="uid://cujiymajot57q" path="res://sprites/Projectiles/plus.png" id="10_xbvyl"]
 [ext_resource type="Texture2D" uid="uid://c06att8836big" path="res://sprites/Projectiles/minus.png" id="11_qdy2s"]
+[ext_resource type="Texture2D" uid="uid://d0lmrx0ebmx1a" path="res://sprites/Player/player2.png" id="11_rpbvo"]
+[ext_resource type="PackedScene" uid="uid://dc5i3pao7roud" path="res://scenes/weapon.tscn" id="12_js5db"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
 texture = ExtResource("1_05ppw")
@@ -1094,6 +1097,24 @@ sources/2 = SubResource("TileSetScenesCollectionSource_cvnnd")
 sources/4 = SubResource("TileSetScenesCollectionSource_ny5jf")
 sources/3 = SubResource("TileSetAtlasSource_mwf16")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0auw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5llv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rpbvo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0y6j"]
+radius = 6.0
+height = 16.0
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -2)
 
@@ -1107,8 +1128,25 @@ layer_0/tile_data = PackedInt32Array(-458757, 196611, 3, -393221, 196611, 3, -32
 layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(-131061, 262145, 5, -65527, 262145, 5, -65526, 262145, 5, -65525, 262145, 5, -196597, 262145, 5, -262133, 262145, 5, -458741, 131073, 1, -327669, 262145, 5, -393205, 262145, 5, 65532, 65537, 1, 65533, 131073, 1, 65534, 131073, 1, 65535, 131073, 1, 0, 131073, 1, 1, 131073, 1, 2, 131073, 1, 3, 131073, 1, 4, 131073, 1, 5, 131073, 1, 6, 131073, 1, 7, 131073, 1, 8, 131073, 1, 9, 262145, 5, 10, 262145, 5, 11, 262145, 5, -131063, 262145, 5, -131062, 262145, 5, -196599, 131073, 1, -196598, 131073, 1, -327670, 786432, 0, -262134, 2, 65536, -327682, 4, 65536, -196610, 4, 131072, -393216, 4, 196608, -262144, 4, 262144)
 
-[node name="Player" parent="." instance=ExtResource("5_upb5g")]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(-62, 31)
+script = ExtResource("9_e43y0")
+jumpHeigth = 27.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_i0auw")
+autoplay = "default"
+frame_progress = 0.541872
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_g0y6j")
+
+[node name="Weapon" parent="Player" instance=ExtResource("12_js5db")]
+
+[node name="CoyoteJumpTimer" type="Timer" parent="Player"]
+wait_time = 0.2
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(56, -13)
@@ -1135,3 +1173,5 @@ texture = ExtResource("10_xbvyl")
 [node name="Sprite_minus" type="Sprite2D" parent="."]
 position = Vector2(-64, -24)
 texture = ExtResource("11_qdy2s")
+
+[connection signal="timeout" from="Player/CoyoteJumpTimer" to="Player" method="_on_coyote_jump_timer_timeout"]
