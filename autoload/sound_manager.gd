@@ -23,6 +23,13 @@ func playButtonOn():
 func playButtonOff():
 	button_click_off.play()
 	
+func playError():
+	error.play()
+
+func playMenuMusic():
+	music.stream = menuMusic
+	music.play()
+	
 func playDoorSound():
 	door.play()
 	
@@ -30,6 +37,3 @@ func playLevelMusic():
 	music.stream = levelMusic
 	music.play()
 	
-func playMenuMusic():
-	music.stream = menuMusic
-	music.play()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://u2s3p4kk16uk"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_hmaip"]
-[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TileMaps/tilemap_packed.png" id="2_lhrw1"]
+[ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_lhrw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upgff"]
 resource_local_to_scene = true
