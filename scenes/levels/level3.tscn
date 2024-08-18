@@ -1084,7 +1084,7 @@ sources/2 = SubResource("TileSetScenesCollectionSource_cvnnd")
 sources/4 = SubResource("TileSetScenesCollectionSource_ny5jf")
 sources/3 = SubResource("TileSetAtlasSource_mwf16")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2(3, -2)
 
 [node name="TileMap" type="TileMap" parent="."]
