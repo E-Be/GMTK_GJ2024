@@ -6,6 +6,7 @@ extends Area2D
 
 signal isActivatedSignal(activated: bool)
 
+var state: bool = false
 var listBoxOn: Array[Crate]
 
 func _process(delta):
@@ -14,32 +15,40 @@ func _process(delta):
 	for crate in listBoxOn:
 		if crate.state != Constants.State.SMALL:
 			gotActivated = true
-			activate(true)
+			switch(true)
 			break
 			
 	if not listBoxOn.is_empty() and not gotActivated:
-		activate(false)
+		switch(false)
 
 			
 func _on_body_entered(body):
 	if body is Crate:
 		listBoxOn.append(body)
 	elif body is Player:
-		activate(true)
+		switch(true)
 
 func activate(activated: bool):
 	if activated:
 		sprite_pushed.visible = true
 		sprite_not_pushed.visible = false
 		isActivatedSignal.emit(true)
+		SoundManager.playButtonOn()
 	else: 
 		sprite_pushed.visible = false
 		sprite_not_pushed.visible = true
 		isActivatedSignal.emit(false)
+		SoundManager.playButtonOff()
 	
 func _on_body_exited(body):
 	if body is Crate:
 		listBoxOn.erase(body)
 	elif body is Player:
-		activate(false)
+		switch(false)
 
+func switch(onOff: bool):
+	if state == onOff:
+		pass
+	else:
+		state = onOff
+		activate(onOff)
