@@ -12,6 +12,7 @@ func _ready():
 		var newButton = levelButton.instantiate()
 		newButton.number = str(i+1)
 		level_list.add_child(newButton)
+		newButton.loadLevel.connect(loadLevel)
 		
 
 func _on_start_button_pressed():
@@ -20,7 +21,11 @@ func _on_start_button_pressed():
 	SceneManager.loadLevel("1")
 	pass # Replace with function body.
 
-
+func loadLevel(level: String):
+	SoundManager.playLevelMusic()
+	self.visible = false
+	SceneManager.loadLevel(level)
+	
 
 func _on_back_button_pressed():
 	level_select.visible = false
