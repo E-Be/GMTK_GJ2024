@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dccn1ywvfechc"]
+[gd_scene load_steps=15 format=3 uid="uid://cuvq1una0diee"]
 
 [ext_resource type="Texture2D" uid="uid://dt7jm1d5fpsv" path="res://sprites/TIleMaps/industrial_tilemap_packed.png" id="1_ta3c5"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_1j3h5"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="4_qiioa"]
 [ext_resource type="PackedScene" uid="uid://crwf1ea2sv08o" path="res://scenes/player.tscn" id="5_4sqc8"]
 [ext_resource type="PackedScene" uid="uid://bxs8hss0q0atc" path="res://scenes/objects/crate.tscn" id="6_xhtgr"]
-[ext_resource type="PackedScene" uid="uid://c7wig0e1wtkih" path="res://scenes/objects/button.tscn" id="7_pbcs7"]
-[ext_resource type="PackedScene" uid="uid://b0vex7l8ecm58" path="res://scenes/objects/button_door.tscn" id="8_krqky"]
+[ext_resource type="PackedScene" uid="uid://u2s3p4kk16uk" path="res://scenes/objects/button.tscn" id="7_pbcs7"]
+[ext_resource type="PackedScene" uid="uid://dnnnvqsff73hv" path="res://scenes/objects/button_door.tscn" id="8_krqky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5k7r"]
 texture = ExtResource("1_ta3c5")
@@ -1115,5 +1115,6 @@ state = 2
 [node name="Button" parent="." instance=ExtResource("7_pbcs7")]
 position = Vector2(-16, 38.04)
 
-[node name="Button_door" parent="." instance=ExtResource("8_krqky")]
+[node name="Button_door" parent="." node_paths=PackedStringArray("button") instance=ExtResource("8_krqky")]
 position = Vector2(120, 39)
+button = NodePath("../Button")

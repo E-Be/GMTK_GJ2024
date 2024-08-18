@@ -3,7 +3,7 @@ extends Control
 @onready var main_menu = %MainMenu
 @onready var level_select = %LevelSelect
 @onready var level_list = %LevelList
-@export var nbOfLevel = 6
+@export var nbOfLevel = 7
 var levelButton = preload("res://scenes/level_button.tscn")
 
 func _ready():

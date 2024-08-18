@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7wig0e1wtkih"]
+[gd_scene load_steps=4 format=3 uid="uid://u2s3p4kk16uk"]
 
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_hmaip"]
 [ext_resource type="Texture2D" uid="uid://cb33j2utyg5x6" path="res://sprites/TIleMaps/tilemap_packed.png" id="2_lhrw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upgff"]
@@ -7,8 +8,10 @@ resource_local_to_scene = true
 size = Vector2(12, 4)
 
 [node name="Button" type="Area2D"]
+script = ExtResource("1_hmaip")
 
 [node name="Sprite_pushed" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_lhrw1")
 region_enabled = true
 region_rect = Rect2(162.863, 135.701, 16.324, 5.946)
@@ -21,3 +24,6 @@ region_rect = Rect2(144.917, 135.701, 16.2157, 5.94611)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_upgff")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
