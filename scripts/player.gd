@@ -20,6 +20,7 @@ var canMove = true
 var isCoyoteJumpAvailable = true
 
 func jump():
+	SoundManager.playJump()
 	velocity.y = jump_velocity
 	
 func getGravity():
