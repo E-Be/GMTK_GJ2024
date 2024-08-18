@@ -1,11 +1,10 @@
 @tool
+class_name Crate
 extends PhysicsBody2D
 
 @export var state: Constants.State = Constants.State.NORMAL:
 	set(new_state):
 		state = new_state
-		
-		
 		
 @onready  var hitbox: Hitbox = $Hitbox
 @onready var collision_shape_2d = $CollisionShape2D
@@ -13,7 +12,9 @@ extends PhysicsBody2D
 
 var mult = 1
 
+
 func _ready():
+	
 
 	hitbox.hit.connect(tryStateChange)
 		
@@ -22,6 +23,7 @@ func _ready():
 	if (state == Constants.State.BIG):
 		mult = 2
 	resize()
+
 
 func tryStateChange(change: Constants.StateChange):
 	print("Try stage change")
@@ -35,17 +37,20 @@ func tryStateChange(change: Constants.StateChange):
 			print("Tried to resize max object")
 			#TODO animation 
 		_: 
-			changeState(change)
+			changeState(change)  
 			
 func changeState(change: Constants.StateChange):
+
 	if (change == Constants.StateChange.MINUS):
 		state -= 1
 		mult = 0.5
 	elif (change == Constants.StateChange.PLUS):
 		state += 1
 		mult = 2
-		
+
+
 	resize()
+	
 	
 func resize():
 	var lastSize = collision_shape_2d.shape.get_size()
@@ -59,4 +64,5 @@ func resize():
 		Constants.State.BIG: 
 			sprite_2d.scale = Vector2(2,2)
 			hitbox.scale = Vector2(2,2)
+ 
 	collision_shape_2d.shape.set_size(lastSize * mult)

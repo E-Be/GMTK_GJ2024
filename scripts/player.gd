@@ -6,6 +6,8 @@ const SPEED = 150
 @export var jumpTimeToPeak: float = 0.4
 @export var jumpTimeToDescent: float = 0.25
 
+@export var push_force = 10
+
 @export var weapon: Weapon
 
 @onready var jump_velocity: float = ((2.0 * jumpHeigth) / jumpTimeToPeak ) * -1
@@ -55,3 +57,8 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if (collision.get_collider() is Crate && collision.get_collider().state == Constants.State.SMALL):
+			collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
