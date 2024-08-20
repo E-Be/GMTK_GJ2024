@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SceneManager="*res://autoload/scene_manager.tscn"
 SoundManager="*res://autoload/sound_manager.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 move_left={

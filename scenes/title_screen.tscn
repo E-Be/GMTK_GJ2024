@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://6xf46usgtirp"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_be6yt"]
-[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TileMaps/Background.png" id="2_b5ty3"]
+[ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TIleMaps/Background.png" id="2_b5ty3"]
 [ext_resource type="FontFile" uid="uid://dyk5seluywc3r" path="res://sprites/Font/at01.ttf" id="3_xppjo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkao2"]
