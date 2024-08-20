@@ -10,6 +10,10 @@ func _ready():
 	currentScene = "World"
 	setVisible(false)
 	
+func _process(delta):
+	if (Input.is_action_pressed("main_menu")):
+		loadLevel("World")
+	
 func loadNextLevel():
 	if (currentScene.is_valid_int()):
 		nextScene = str(int(currentScene) + 1)

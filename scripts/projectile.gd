@@ -9,6 +9,7 @@ const EXPLOSION_PARTICULES = preload("res://scenes/explosion_particules.tscn")
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var collision_shape_hurtbox = $HurtBox/CollisionShape2D
 
 @export var hurtbox : Hurtbox
 @export var speed : float = 350
@@ -44,6 +45,9 @@ func disapear():
 	sprite.visible = false
 	collision_shape_2d.set_deferred("disabled", true)
 	collision_shape_2d.set_deferred("monitoring", false)
+	collision_shape_hurtbox.set_deferred("disabled", true)
+	collision_shape_hurtbox.set_deferred("monitoring", false)
+	
 	
 func die():
 	var newParticules = EXPLOSION_PARTICULES.instantiate()

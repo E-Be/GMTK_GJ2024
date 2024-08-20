@@ -30,7 +30,7 @@ func instantiate_projectile(effect: Constants.StateChange, direction : Vector2):
 
 	newProjectile.effect = effect
 	newProjectile.direction = direction
-	newProjectile.global_position = global_position + (direction * 11)
+	newProjectile.global_position = global_position + (direction * 12)
 
 	get_tree().get_root().add_child(newProjectile)
 	
