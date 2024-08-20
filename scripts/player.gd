@@ -50,8 +50,10 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		if direction > 0:
+			direction = 1
 			animated_sprite_2d.flip_h = true
 		else:
+			direction = -1
 			animated_sprite_2d.flip_h = false
 			
 		shootDirection = Vector2(direction, 0)
@@ -61,8 +63,11 @@ func _physics_process(delta):
 		
 	var directionY = Input.get_axis("look_up", "look_down")
 	if directionY:
+		if directionY > 0:
+			directionY = 1
+		else:
+			directionY = -1
 		shootDirection = Vector2(0, directionY)
-		
 	#Shoot
 	if Input.is_action_pressed("shoot_minus"):
 		if weapon:
