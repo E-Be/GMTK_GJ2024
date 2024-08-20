@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://6xf46usgtirp"]
+[gd_scene load_steps=8 format=3 uid="uid://6xf46usgtirp"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_be6yt"]
 [ext_resource type="Texture2D" uid="uid://npmyqbvx3no4" path="res://sprites/TileMaps/Background.png" id="2_b5ty3"]
+[ext_resource type="FontFile" uid="uid://dyk5seluywc3r" path="res://sprites/Font/at01.ttf" id="3_xppjo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkao2"]
 texture = ExtResource("2_b5ty3")
@@ -26,6 +27,13 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_7t2pp"]
 tile_size = Vector2i(18, 18)
 sources/1 = SubResource("TileSetAtlasSource_kkao2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_42ds8"]
+font = ExtResource("3_xppjo")
+font_size = 128
+font_color = Color(0.368627, 1, 1, 1)
+shadow_size = 10
+shadow_color = Color(0.129492, 0.365382, 1, 1)
 
 [sub_resource type="Theme" id="Theme_68fwr"]
 
@@ -73,6 +81,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 text = "Sizable"
+label_settings = SubResource("LabelSettings_42ds8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
